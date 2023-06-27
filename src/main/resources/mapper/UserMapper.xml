@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.admin.book_system.mapper.UserMapper">
+
+<!--    사용자 아이디에 따른 회원 정보 조회-->
+    <select id="findByUserId" parameterType="String" resultType="com.admin.book_system.model.entity.BookUser">
+        SELECT * FROM book_user WHERE user_id = #{user_id}
+    </select>
+
+    <!--    사용자 아이디에 따른 회원 정보 조회-->
+    <insert id="save" parameterType="com.admin.book_system.model.dto.BookUserDTO" >
+        insert into book_user(user_id, user_pass, user_phone_number) values (#{user_id}, #{user_pass}, #{user_phone_number})
+        <selectKey resultType="int" keyProperty="user_seq" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <delete id="delete" parameterType="String"  >
+        DELETE from book_user where user_id= #{user_id}
+    </delete>
+</mapper>
