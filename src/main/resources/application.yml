@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bitedu
+    username: root
+    password: 150515
+#MyBatis 설정
+mybatis:
+  config-location: classpath:mapper/config/mybatis-config.xml
+  type-aliases-package: com.admin.book_system
+  mapper-locations: mapper/*.xml
