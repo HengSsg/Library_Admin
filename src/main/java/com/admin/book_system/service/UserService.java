@@ -10,4 +10,6 @@ public interface UserService {
     int saveUser(BookUserDTO user);
 
     BookUser getUserInfo(String id);
+
+    int delete(String id);
 }

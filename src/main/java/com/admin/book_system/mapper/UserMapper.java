@@ -7,11 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
+
 @Mapper
 public interface UserMapper {
     // create
     int save(BookUserDTO user);
 
     BookUser findByUserId(String id);
+
+    int delete(String userId);
 }

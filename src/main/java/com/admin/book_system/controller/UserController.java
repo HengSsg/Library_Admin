@@ -31,6 +31,13 @@ public class UserController {
         return userService.getUserInfo(id);
     }
 
+    // DELETE - 회원 삭제
+    @DeleteMapping("/{id}")
+    public int deleteUser(@PathVariable String id){
+        return userService.delete(id);
+    }
+
+
 //    // GET - 아이디로 회원정보 조회
 //    @GetMapping("/ResponseEntity/{id}")
 //    public ResponseEntity<?> getUserInfoByResponseEntity(@PathVariable String id){

@@ -17,4 +17,8 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
     </insert>
+
+    <delete id="delete" parameterType="String"  >
+        DELETE from book_user where user_id= #{user_id}
+    </delete>
 </mapper>

@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService {
     public BookUser getUserInfo(String id) {
         return  mapper.findByUserId(id);
     }
+
+    @Override
+    public int delete(String id) {
+        return mapper.delete(id);
+    }
 }
